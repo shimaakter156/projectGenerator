@@ -1,0 +1,14 @@
+Project Creation:
+commands
+1. composer create-project laravel/laravel^8.0 project-name
+2.cd project-name
+test the project is install or not
+3.php artisan serve
+this gives project a frontend authetication u i and scaffolding
+4.composer require laravel/ui
+
+5.php artisan ui bootstrap --auth
+6. npm install
+7.npm run dev or watch
+
+then you will configuare tables
