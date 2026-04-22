@@ -7,13 +7,19 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard</title>
+
+    {{-- Stylesheets --}}
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand ps-3" href="index.html">Dashboard</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -675,12 +681,20 @@
         </footer>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="{{asset('js/scripts.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<script src="{{asset('demo/chart-area-demo.js')}}"></script>
-<script src="{{asset('demo/chart-bar-demo.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
-<script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+
+{{-- ========== SCRIPTS ========== --}}
+
+{{-- Compiled app bundle (Bootstrap + Chart.js + simple-datatables are imported from resources/js/app.js) --}}
+<script src="{{ asset('js/app.js') }}"></script>
+
+{{-- Core template JS (sidebar toggle, etc.) --}}
+<script src="{{ asset('js/scripts.js') }}"></script>
+
+{{-- Demo chart scripts (these expect window.Chart to exist, which app.js provides) --}}
+<script src="{{ asset('demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('demo/chart-bar-demo.js') }}"></script>
+
+{{-- DataTable init (expects window.DataTable from app.js) --}}
+<script src="{{ asset('js/datatables-simple-demo.js') }}"></script>
 </body>
 </html>
